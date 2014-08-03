@@ -2,7 +2,7 @@
 <ul>
 	<% @beans.each do |b| %>
 		<li>
-		<strong> <%= b.name %> </strong> -- <%= b.roast %>
+		<strong> <%= b.name %> </strong> -- <%= b.roast %> <%= link_to "Show me more about #{b.name}!", bean_path(b) %>
 		</li>
 	<% end %>
 </ul>

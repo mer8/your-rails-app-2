@@ -5,15 +5,21 @@ Rails.application.routes.draw do
 
   get 'beans/new' => 'beans#new'
 
-  get 'beans/:id' => 'beans#show'
+  get 'beans/:id' => 'beans#show', as: :bean
 
   post 'beans/' => 'beans#create'
+
+  get 'beans/:id/edit' => 'beans#edit'
+
+  patch 'beans/:id' => 'beans#update'
+
+  delete 'beans/:id' => 'beans#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'beans#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
